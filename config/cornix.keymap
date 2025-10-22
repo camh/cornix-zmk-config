@@ -79,11 +79,11 @@
 #define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS)                                 \
      ZMK_HOLD_TAP(NAME, bindings = <HOLD>, <TAP>; flavor = "balanced";         \
                tapping-term-ms = <280>; quick-tap-ms = <QUICK_TAP_MS>;         \
-               require-prior-idle-ms = <125>; hold-trigger-on-release;         \
+               require-prior-idle-ms = <100>; hold-trigger-on-release;         \
                hold-trigger-key-positions = <TRIGGER_POS>;)
 
-MAKE_HRM(hml, &kp, &kp, KEYS_R KEYS_L THUMBS) // Left-hand HRMs.
-MAKE_HRM(hmr, &kp, &kp, KEYS_L KEYS_R THUMBS) // Right-hand HRMs.
+MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS) // Left-hand HRMs.
+MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 
 #include "includes/combos.dtsi" // Must be sourced after HRM-combo hack.
 #include "includes/mouse.dtsi"
