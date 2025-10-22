@@ -41,6 +41,7 @@
 #define THUMBS LH1 LH0 RH0 RH1
 #define KEYS_T LH1 LH0 RH0 RH1
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 15
+#define QUICK_TAP_MS 175
 
 // tap windows for ctl alt and gui
 
