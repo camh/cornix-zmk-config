@@ -37,17 +37,7 @@
 #define FWD LA(F17) // forward
 #define BCK LA(F16) // back
 
-#define QUICK_TAP_MS 175
-
-// tap windows for ctl alt and gui
-
-#define HM_TAPPING_TERM 280
-#define HM_TAPPING_REPEAT 210
-
-// quick tapping for shift
-
-#define HM_TAPPING_TERM_FAST 200
-#define HM_PRIOR_IDLE 70
+// #define QUICK_TAP_MS 175
 
 /* Global */
 
@@ -55,19 +45,18 @@
 //    tapping_term_ms = <280>;
 // };
 
-&sk {
-  release-after-ms = <900>;
-  quick-release;
-};
-
-&sl { // Allow sticky mods to chord across sticky layers.
-  ignore-modifiers;
-};
+// &sk {
+//  release-after-ms = <900>;
+//   quick-release;
+// };
+// 
+// &sl { // Allow sticky mods to chord across sticky layers.
+//   ignore-modifiers;
+// };
 
 &lt {
   flavor = "balanced";
   tapping-term-ms = <200>;
-  quick-tap-ms = <QUICK_TAP_MS>;
 };
 
 /* Homerow Mods */
@@ -78,8 +67,8 @@
 
 #define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS)                                 \
      ZMK_HOLD_TAP(NAME, bindings = <HOLD>, <TAP>; flavor = "balanced";         \
-               tapping-term-ms = <280>; quick-tap-ms = <QUICK_TAP_MS>;         \
-               require-prior-idle-ms = <100>; hold-trigger-on-release;         \
+               tapping-term-ms = <280>;                                        \
+               require-prior-idle-ms = <80>; hold-trigger-on-release;          \
                hold-trigger-key-positions = <TRIGGER_POS>;)
 
 MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS) // Left-hand HRMs.
@@ -92,7 +81,6 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 #define MT_CORE                                                                \
   flavor = "tap-preferred";                                                    \
   tapping-term-ms = <220>;                                                     \
-  quick-tap-ms = <220>;                                                        \
   hold-trigger-key-positions = <0>;
 
 &mt { MT_CORE };
