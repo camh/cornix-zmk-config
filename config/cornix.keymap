@@ -45,24 +45,15 @@
 
 #define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS)                                 \
      ZMK_HOLD_TAP(NAME, bindings = <HOLD>, <TAP>; flavor = "balanced";         \
-               tapping-term-ms = <280>;                                        \
+               tapping-term-ms = <211>;                                        \
                require-prior-idle-ms = <80>; hold-trigger-on-release;          \
                hold-trigger-key-positions = <TRIGGER_POS>;)
 
 MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS) // Left-hand HRMs.
 MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 
-#include "includes/combos.dtsi" // Must be sourced after HRM-combo hack.
+#include "includes/combos.dtsi"
 #include "includes/mouse.dtsi"
-
-// Trigger tap-action on all interrupts.
-#define MT_CORE                                                                \
-  flavor = "balanced";                                                         \
-  tapping-term-ms = <280>;                                                     \
-  hold-trigger-key-positions = <0>;
-
-&mt { MT_CORE };
-
 
 / {
    keymap {
