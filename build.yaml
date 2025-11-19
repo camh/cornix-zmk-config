@@ -1,5 +1,4 @@
 include:
-  include:
   # Use cornix with dongle
   - board: cornix_dongle
     shield: cornix_dongle_eyelash dongle_display
@@ -10,6 +9,7 @@ include:
     # shield: cornix_indicator
     artifact-name: cornix_left_for_dongle
 
+  # Use cornix without dongle
   - board: cornix_left
     # shield: cornix_indicator
     artifact-name: cornix_left
