@@ -1,3 +1,6 @@
+---
+name: zmk-keyboard-cornix
 build:
   settings:
     board_root: .
+    snippet_root: .
